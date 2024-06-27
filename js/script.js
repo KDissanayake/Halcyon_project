@@ -16,13 +16,16 @@ document.addEventListener("DOMContentLoaded", function() {
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
-        // Output the result in an element with id="timer"
-        document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        // Output the result in respective elements
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
         
         // If the count down is over, write some text 
         if (distance < 0) {
             clearInterval(countdownfunction);
             document.getElementById("timer").innerHTML = "EXPIRED";
         }
-    }, 1000);
+    }, 1000); // Update every 1 second (1000 milliseconds)
 });
